@@ -25,20 +25,20 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        _player.enabled = false;
-
-        GameScreenManager.Instance.OnGameStarted += GameStarted;
+        GameRootController.Instance.OnGameStarted += GameStarted;
     }
     
     private void GameStarted()
     {
-        _player.enabled = true;
+        _player.SetShouldMove(true);
     }
     
     public void PlayerDied()
     {
         OnGameOver?.Invoke();
+        
+        _player.SetShouldMove(false);
         _player.transform.position = new Vector3(0,0,0);
-        _player.enabled = false;
+        
     }
 }

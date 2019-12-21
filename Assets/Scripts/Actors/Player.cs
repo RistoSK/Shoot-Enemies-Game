@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private PlayerStats _playerStats;
 
+    [SerializeField] private bool _shouldMove;
+
     private float _minX;
     private float _maxX;
     private float _minY;
@@ -21,6 +23,8 @@ public class Player : MonoBehaviour
 
     private float _currentCooldown;
 
+    private Vector2 _vectorZero = new Vector2(0,0);
+    
     private Rigidbody2D _rigidBody2D;
 
     private void Start()
@@ -28,6 +32,8 @@ public class Player : MonoBehaviour
         _rigidBody2D = GetComponent<Rigidbody2D>();
         _currentCooldown = _playerStats.ShootingCooldown;
 
+        _shouldMove = false;
+        
         _minX = _camera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + _padding;
         _maxX = _camera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - _padding;
 
@@ -37,6 +43,12 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (!_shouldMove)
+        {
+            _rigidBody2D.velocity = _vectorZero;
+            return;
+        }
+        
         Vector3 currentPosition = transform.position;
         
         float newPositionX = Mathf.Clamp(currentPosition.x, _minX, _maxX);
@@ -74,6 +86,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void SetShouldMove(bool shouldMove)
+    {
+        _shouldMove = shouldMove;
+    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var enemy = collision.GetComponent<Enemy>();
