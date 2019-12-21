@@ -9,6 +9,8 @@ public class EnemyManager : MonoBehaviour
     // TODO REMOVE THIS
     [SerializeField] private GameMode _easyMode;
     
+    [SerializeField] private EnemySpawner _enemySpawner;
+    
     public Action<int> OnPointsGained;
     public Action OnGameFinished;
     
@@ -36,6 +38,18 @@ public class EnemyManager : MonoBehaviour
     {
         GameScreenManager.Instance.OnGameModeSelected += SetGameMode;
         PlayerManager.Instance.OnGameOver += DeactivateAllEnemies;
+        GameRootController.Instance.OnGameModeSelected += SetGameMode;
+        GameRootController.Instance.OnGameStarted += StartSpawning;
+
+        if (!_enemySpawner)
+        {
+            Debug.LogError("EnemySpawner has not been set");
+        }
+    }
+
+    private void StartSpawning()
+    {
+        _enemySpawner.ShouldSpawn(true);
     }
 
     private void SetGameMode(GameMode gameMode)
@@ -50,6 +64,8 @@ public class EnemyManager : MonoBehaviour
 
     private void DeactivateAllEnemies()
     {
-        OnGameFinished?.Invoke();    
+        OnGameFinished?.Invoke();
+        
+        _enemySpawner.ShouldSpawn(false);
     }
 }
