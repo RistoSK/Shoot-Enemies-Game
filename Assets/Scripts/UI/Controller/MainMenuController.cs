@@ -5,7 +5,7 @@ public class MainMenuController : BaseController<UIMainMenuRoot>
     public override void InitiateController()
     {
         ui.MainMenuView.OnPlayClicked += StartGame;
-        ui.UpdatePlayerInformation(Root.PlayerInfo);
+        ui.MainMenuView.UpdatePlayerInformation(Root.PlayerInfo);
         
         base.InitiateController();
     }

@@ -19,7 +19,7 @@ public class LoginController : BaseController<UILoginRoot>
 
     private void SignUp()
     {
-        ui.SetPlayerInformation(Root.PlayerInfo);
+        ui.LoginView.SetPlayerInformation(Root.PlayerInfo);
         Root.SignUpCompleted();
     }
 }

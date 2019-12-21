@@ -3,6 +3,7 @@
 public abstract class BaseController : MonoBehaviour
 {
     [HideInInspector] public RootController Root;
+    [HideInInspector] public GameRootController GameRoot;
 
     public virtual void InitiateController()
     {

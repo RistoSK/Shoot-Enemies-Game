@@ -7,42 +7,57 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="EnemyManager.cs" t="Include" />
-          <e p="EnemyStats.cs" t="Include" />
-          <e p="FactoryPool" t="Include">
+          <e p="Actors" t="Include">
             <e p="Enemy.cs" t="Include" />
+            <e p="Player.cs" t="Include" />
+            <e p="PlayerProjectile.cs" t="Include" />
+          </e>
+          <e p="FactoryPool" t="Include">
             <e p="EnemySpawner.cs" t="Include" />
             <e p="GenericObjectPool.cs" t="Include" />
             <e p="IObjectPool.cs" t="Include" />
             <e p="IPoolable.cs" t="Include" />
             <e p="ObjectPool.cs" t="Include" />
-            <e p="Player.cs" t="Include" />
-            <e p="PlayerProjectile.cs" t="Include" />
             <e p="PoolableObject.cs" t="Include" />
           </e>
-          <e p="GameManager.cs" t="Include" />
-          <e p="GameMode.cs" t="Include" />
-          <e p="GameScreenManager.cs" t="Include" />
           <e p="IDamageable.cs" t="Include" />
-          <e p="MainScreenController.cs" t="Include" />
-          <e p="PlayerInfo.cs" t="Include" />
-          <e p="PlayerManager.cs" t="Include" />
-          <e p="PlayerStats.cs" t="Include" />
-          <e p="ProjectileStats.cs" t="Include" />
-          <e p="Save v2" t="Include">
+          <e p="Managers" t="Include">
+            <e p="EnemyManager.cs" t="Include" />
+            <e p="GameScreenManager.cs" t="Include" />
+            <e p="PlayerManager.cs" t="Include" />
+            <e p="ScoreManager.cs" t="Include" />
+          </e>
+          <e p="Save" t="Include">
+            <e p="Save.cs" t="Include" />
             <e p="SaveLoad.cs" t="Include" />
             <e p="SavingService.cs" t="Include" />
           </e>
-          <e p="Save.cs" t="Include" />
-          <e p="ScoreManager.cs" t="Include" />
+          <e p="ScriptableObjects" t="Include">
+            <e p="EnemyStats.cs" t="Include" />
+            <e p="GameMode.cs" t="Include" />
+            <e p="PlayerInfo.cs" t="Include" />
+            <e p="PlayerStats.cs" t="Include" />
+            <e p="ProjectileStats.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="Controller" t="Include">
               <e p="BaseController.cs" t="Include" />
+              <e p="GameController.cs" t="Include" />
+              <e p="GameDifficultyController.cs" t="Include" />
+              <e p="GameOverController.cs" t="Include" />
+              <e p="GameRootController.cs" t="Include" />
               <e p="LoginController.cs" t="Include" />
               <e p="MainMenuController.cs" t="Include" />
+              <e p="MainScreenController.cs" t="Include" />
               <e p="RootController.cs" t="Include" />
             </e>
             <e p="View" t="Include">
+              <e p="UIGameDifficultyRoot.cs" t="Include" />
+              <e p="UIGameDifficultyView.cs" t="Include" />
+              <e p="UIGameOverRoot.cs" t="Include" />
+              <e p="UIGameOverView.cs" t="Include" />
+              <e p="UIGameRoot.cs" t="Include" />
+              <e p="UIGameView.cs" t="Include" />
               <e p="UILoginRoot.cs" t="Include" />
               <e p="UILoginView.cs" t="Include" />
               <e p="UIMainMenuRoot.cs" t="Include" />
