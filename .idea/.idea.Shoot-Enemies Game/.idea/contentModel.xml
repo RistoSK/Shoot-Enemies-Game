@@ -8,9 +8,15 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Actors" t="Include">
-            <e p="Enemy.cs" t="Include" />
-            <e p="Player.cs" t="Include" />
-            <e p="PlayerProjectile.cs" t="Include" />
+            <e p="Enemy" t="Include">
+              <e p="Enemy.cs" t="Include" />
+            </e>
+            <e p="Player" t="Include">
+              <e p="PlayerInput.cs" t="Include" />
+              <e p="PlayerMovement.cs" t="Include" />
+              <e p="PlayerProjectile.cs" t="Include" />
+              <e p="PlayerShooting.cs" t="Include" />
+            </e>
           </e>
           <e p="FactoryPool" t="Include">
             <e p="EnemySpawner.cs" t="Include" />
@@ -20,11 +26,13 @@
             <e p="ObjectPool.cs" t="Include" />
             <e p="PoolableObject.cs" t="Include" />
           </e>
-          <e p="IDamageable.cs" t="Include" />
-          <e p="Managers" t="Include">
+          <e p="Intefaces" t="Include">
+            <e p="IDamageable.cs" t="Include" />
+            <e p="IPlayerInput.cs" t="Include" />
+          </e>
+          <e p="Managers &amp; Controllers" t="Include">
             <e p="EnemyManager.cs" t="Include" />
-            <e p="GameScreenManager.cs" t="Include" />
-            <e p="PlayerManager.cs" t="Include" />
+            <e p="PlayerController.cs" t="Include" />
             <e p="ScoreManager.cs" t="Include" />
           </e>
           <e p="Save" t="Include">
@@ -33,9 +41,9 @@
             <e p="SavingService.cs" t="Include" />
           </e>
           <e p="ScriptableObjects" t="Include">
+            <e p="AccountInfo.cs" t="Include" />
             <e p="EnemyStats.cs" t="Include" />
             <e p="GameMode.cs" t="Include" />
-            <e p="PlayerInfo.cs" t="Include" />
             <e p="PlayerStats.cs" t="Include" />
             <e p="ProjectileStats.cs" t="Include" />
           </e>
@@ -48,7 +56,6 @@
               <e p="GameRootController.cs" t="Include" />
               <e p="LoginController.cs" t="Include" />
               <e p="MainMenuController.cs" t="Include" />
-              <e p="MainScreenController.cs" t="Include" />
               <e p="RootController.cs" t="Include" />
             </e>
             <e p="View" t="Include">

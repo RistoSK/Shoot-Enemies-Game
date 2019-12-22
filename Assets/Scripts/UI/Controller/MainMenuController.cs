@@ -1,11 +1,9 @@
-﻿using UnityEngine;
-
-public class MainMenuController : BaseController<UIMainMenuRoot>
+﻿public class MainMenuController : BaseController<UIMainMenuRoot>
 {
     public override void InitiateController()
     {
         ui.MainMenuView.OnPlayClicked += StartGame;
-        ui.MainMenuView.UpdatePlayerInformation(Root.PlayerInfo);
+        ui.MainMenuView.UpdatePlayerInformation(Root.AccountInfo);
         
         base.InitiateController();
     }

@@ -364,7 +364,7 @@ MonoBehaviour:
   _mainMenuController: {fileID: 362531730}
   _loginController: {fileID: 758637755}
   _saveLoad: {fileID: 1790375034}
-  _playerInfo: {fileID: 11400000, guid: 9281c16773b2ba9429e4ae0bf613b93e, type: 2}
+  _accountInfo: {fileID: 11400000, guid: 9281c16773b2ba9429e4ae0bf613b93e, type: 2}
 --- !u!4 &303362961
 Transform:
   m_ObjectHideFlags: 0
@@ -1630,8 +1630,8 @@ MonoBehaviour:
   m_VerticalScrollbar: {fileID: 0}
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0

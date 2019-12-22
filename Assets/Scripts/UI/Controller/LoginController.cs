@@ -1,7 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
-
-public class LoginController : BaseController<UILoginRoot>
+﻿public class LoginController : BaseController<UILoginRoot>
 {
     public override void InitiateController()
     {   
@@ -19,7 +16,7 @@ public class LoginController : BaseController<UILoginRoot>
 
     private void SignUp()
     {
-        ui.LoginView.SetPlayerInformation(Root.PlayerInfo);
+        ui.LoginView.SetPlayerInformation(Root.AccountInfo);
         Root.SignUpCompleted();
     }
 }
