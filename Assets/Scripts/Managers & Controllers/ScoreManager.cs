@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
     
     public Action<int> OnPointsGained;
-    
+
     private int _currentScore = 0;
 
     public int CurrentScore => _currentScore;
@@ -27,6 +27,12 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         EnemyManager.Instance.OnPointsGained += PointsGained;
+        GameRootController.Instance.OnGameStarted += ResetCurrentPoints;
+    }
+
+    private void ResetCurrentPoints()
+    {
+        _currentScore = 0;
     }
 
     private void PointsGained(int points)
