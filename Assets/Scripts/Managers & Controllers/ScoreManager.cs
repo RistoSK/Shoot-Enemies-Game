@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField] private AccountInfo _accountInfo;
-    
     public static ScoreManager Instance;
     
     public Action<int> OnPointsGained;
