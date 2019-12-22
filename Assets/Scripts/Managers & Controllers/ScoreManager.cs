@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField] private PlayerInfo _playerInfo;
+    [SerializeField] private AccountInfo _accountInfo;
     
     public static ScoreManager Instance;
     
-    public Action<int> OnNewHighScoreArchived;
     public Action<int> OnPointsGained;
     
     private int _currentScore = 0;
@@ -33,17 +29,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         EnemyManager.Instance.OnPointsGained += PointsGained;
-        //PlayerManager.Instance.OnGameOver += GameSessionFinished;
     }
-    
-
-    // private void GameSessionFinished()
-    // {
-    //     if (_currentScore > _playerInfo.HighScore)
-    //     {
-    //         OnNewHighScoreArchived?.Invoke(_currentScore);
-    //     }
-    // }
 
     private void PointsGained(int points)
     {
