@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -22,9 +20,9 @@ public class UIGameOverView : MonoBehaviour
         OnQuitClicked?.Invoke();   
     }
 
-    public void UpdateScoreValues(PlayerInfo playerInfo, int currentPoints)
+    public void UpdateScoreValues(AccountInfo accountInfo, int currentPoints)
     {
-        _highScore.text = playerInfo.HighScore.ToString();
+        _highScore.text = accountInfo.HighScore.ToString();
         _currentScore.text = currentPoints.ToString();
     }
 }

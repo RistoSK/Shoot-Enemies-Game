@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class RootController : MonoBehaviour
 {
@@ -10,16 +8,16 @@ public class RootController : MonoBehaviour
     [SerializeField] private LoginController _loginController;
 
     [SerializeField] private SaveLoad _saveLoad;
-    [SerializeField] private PlayerInfo _playerInfo;
+    [SerializeField] private AccountInfo _accountInfo;
 
-    public PlayerInfo PlayerInfo => _playerInfo;
+    public AccountInfo AccountInfo => _accountInfo;
     
     private void Start()
     {
         _mainMenuController.Root = this;
         _loginController.Root = this;
 
-        if (_saveLoad.Load(_playerInfo))
+        if (_saveLoad.Load(_accountInfo))
         {
             LoggingSucceeded();
         }
@@ -47,7 +45,7 @@ public class RootController : MonoBehaviour
 
     private void LoggingSucceeded()
     {
-        _saveLoad.Save(_playerInfo);
+        _saveLoad.Save(_accountInfo);
         
         DisableControllers();
         _mainMenuController.InitiateController();

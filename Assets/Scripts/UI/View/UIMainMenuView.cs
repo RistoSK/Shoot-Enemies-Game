@@ -14,9 +14,9 @@ public class UIMainMenuView : MonoBehaviour
         OnPlayClicked?.Invoke();
     }
     
-    public void UpdatePlayerInformation(PlayerInfo playerInfo)
+    public void UpdatePlayerInformation(AccountInfo accountInfo)
     {
-        _userNameText.text = playerInfo.UserName;
-        _highScoreText.text = playerInfo.HighScore.ToString();
+        _userNameText.text = accountInfo.UserName;
+        _highScoreText.text = accountInfo.HighScore.ToString();
     }
 }

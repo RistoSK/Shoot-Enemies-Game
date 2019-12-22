@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class UIGameView : MonoBehaviour
@@ -9,10 +7,10 @@ public class UIGameView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _highScore;
     [SerializeField] private TextMeshProUGUI _userName;
 
-    public void InitiateValues(PlayerInfo playerInfo)
+    public void InitiateValues(AccountInfo accountInfo)
     {
-        _userName.text = playerInfo.UserName;
-        _highScore.text = playerInfo.HighScore.ToString();
+        _userName.text = accountInfo.UserName;
+        _highScore.text = accountInfo.HighScore.ToString();
         _currentScore.text = "0";
     }
 

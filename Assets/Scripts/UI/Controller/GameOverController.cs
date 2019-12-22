@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameOverController : BaseController<UIGameOverRoot>
 {
@@ -9,7 +7,7 @@ public class GameOverController : BaseController<UIGameOverRoot>
         ui.GameOverView.OnResetClicked += ChangeDifficulty;
         ui.GameOverView.OnQuitClicked += QuitGame;
         
-        ui.GameOverView.UpdateScoreValues(GameRoot.PlayerInfo, GameRoot.GetCurrentPoints());
+        ui.GameOverView.UpdateScoreValues(GameRoot.AccountInfo, GameRoot.GetCurrentPoints());
             
         base.InitiateController();
     }

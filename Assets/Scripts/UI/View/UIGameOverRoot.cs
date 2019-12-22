@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UIGameOverRoot : UIRoot
 {
-    [SerializeField] private UIGameOverView _gameoverView;
+    [SerializeField] private UIGameOverView _gameOverView;
 
-    public UIGameOverView GameOverView => _gameoverView;
+    public UIGameOverView GameOverView => _gameOverView;
 }

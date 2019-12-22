@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -16,10 +14,10 @@ public class UILoginView : MonoBehaviour
         OnSignUpClicked?.Invoke();
     }
     
-    public void SetPlayerInformation(PlayerInfo playerInfo)
+    public void SetPlayerInformation(AccountInfo accountInfo)
     {
-        playerInfo.UserName = _usernameInputField.text;
-        playerInfo.Password = _passwordInputField.text;
-        playerInfo.HighScore = 0;
+        accountInfo.UserName = _usernameInputField.text;
+        accountInfo.Password = _passwordInputField.text;
+        accountInfo.HighScore = 0;
     }
 }

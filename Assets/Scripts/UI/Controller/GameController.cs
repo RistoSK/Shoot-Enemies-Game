@@ -6,15 +6,15 @@ public class GameController : BaseController<UIGameRoot>
 {
     public override void InitiateController()
     {   
-        ui.GameView.InitiateValues(GameRoot.PlayerInfo);
+        ui.GameView.InitiateValues(GameRoot.AccountInfo);
             
         base.InitiateController();
     }
     
-    // public override void DisableController()
-    // {
-    //     base.DisableController();
-    // }
+    public override void DisableController()
+    {
+        base.DisableController();
+    }
     
     public void UpdateCurrentScoreView(int currentScore)
     {

@@ -20,8 +20,6 @@ public abstract class BaseController<T> : BaseController where T : UIRoot
 {
     [SerializeField] protected T ui;
 
-    public T UI => ui;
-
     public override void InitiateController()
     {
         base.InitiateController();

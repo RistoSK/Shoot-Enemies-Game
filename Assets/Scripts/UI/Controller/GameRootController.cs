@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameRootController : MonoBehaviour
 {
@@ -11,14 +8,14 @@ public class GameRootController : MonoBehaviour
     [SerializeField] private GameController _gameController;
 
     [SerializeField] private SaveLoad _saveLoad;
-    [SerializeField] private PlayerInfo _playerInfo;
+    [SerializeField] private AccountInfo _accountInfo;
 
     public static GameRootController Instance;
 
     public Action<GameMode> OnGameModeSelected;
     public Action OnGameStarted;
     
-    public PlayerInfo PlayerInfo => _playerInfo;
+    public AccountInfo AccountInfo => _accountInfo;
 
     private void Awake()
     {
@@ -39,17 +36,16 @@ public class GameRootController : MonoBehaviour
         _gameController.GameRoot = this;
 
         ScoreManager.Instance.OnPointsGained += UpdateCurrentScore;
-        ScoreManager.Instance.OnNewHighScoreArchived += HighScoreArchived;
-        PlayerManager.Instance.OnGameOver += GameOver;
+        PlayerController.Instance.OnGameOver += GameOver;
 
         ActivateDifficultyChoiceScreen();
     }
 
     private void GameOver()
     {
-        if (ScoreManager.Instance.CurrentScore > _playerInfo.HighScore)
+        if (ScoreManager.Instance.CurrentScore > _accountInfo.HighScore)
         {
-            _playerInfo.HighScore = ScoreManager.Instance.CurrentScore;
+            HighScoreArchived(ScoreManager.Instance.CurrentScore);
         }
         
         ActivateGameOverScreen();
@@ -69,9 +65,9 @@ public class GameRootController : MonoBehaviour
 
     private void HighScoreArchived(int newHighScore)
     {
-        _playerInfo.HighScore = newHighScore;
+        _accountInfo.HighScore = newHighScore;
         
-        _saveLoad.Save(_playerInfo);
+        _saveLoad.Save(_accountInfo);
     }
 
     private void UpdateCurrentScore(int currentScore)
@@ -119,5 +115,6 @@ public class GameRootController : MonoBehaviour
     {
         _gameDifficultyController.DisableController();
         _gameOverController.DisableController();
+        _gameController.DisableController();
     }
 }
