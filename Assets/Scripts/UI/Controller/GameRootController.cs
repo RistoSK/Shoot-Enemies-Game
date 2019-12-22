@@ -119,22 +119,6 @@ public class GameRootController : MonoBehaviour
         DisableControllers();
         _gameOverController.InitiateController();
     }
-    
-    // public void SignUpCompleted()
-    // {
-    //     LoggingSucceeded();
-    // }
-    //
-    // public void PlayPressed()
-    // {
-    //     SceneManager.LoadScene(1);
-    // }
-    //
-    // private void LoggingFailed()
-    // {
-    //     DisableControllers();
-    //     _gameOverController.InitiateController();
-    // }
 
     private void DisableControllers()
     {
