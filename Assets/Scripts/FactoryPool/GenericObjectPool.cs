@@ -46,9 +46,9 @@ public abstract class GenericObjectPool<T> : MonoBehaviour, IObjectPool<T> where
 
     public void ReturnToPool(object currentObject)
     {
-        if (currentObject is T)
+        if (currentObject is T poolableObject)
         {
-            ReturnToPool((T) currentObject);
+            ReturnToPool(poolableObject);
         }
     }
 }
