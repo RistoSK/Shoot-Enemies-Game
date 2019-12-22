@@ -5,23 +5,19 @@ public class PlayerProjectile : PoolableObject
 {
     [SerializeField] private ProjectileStats _projectileStats;
     
+    private readonly Vector3 _rightVector = new Vector3(1, 0, 0);
+    
     private float _startTime;
-
-    public Rigidbody2D Rigidbody2D { get; private set; }
-
-    // Can you add the movement here?
+    
     public override void PrepareToUse()
     {
         _startTime = Time.time;
-
-        if (!Rigidbody2D)
-        {
-            Rigidbody2D = GetComponent<Rigidbody2D>();
-        }
     }
 
     private void Update()
     {
+        transform.position += _rightVector * (Time.deltaTime * _projectileStats.Speed);
+        
         if (Time.time - _startTime > _projectileStats.TimeOutSeconds)
         {
             ReturnToPool();
