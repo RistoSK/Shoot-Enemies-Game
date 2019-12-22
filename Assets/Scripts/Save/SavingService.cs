@@ -6,9 +6,9 @@ public static class SavingService
 {
     private const string SavedPathAddress = "/shootenemies.save";
     
-    public static void SaveGame(PlayerInfo playerInfo)
+    public static void SaveGame(AccountInfo accountInfo)
     {
-        Save save = CreateSaveGameObject(playerInfo);
+        Save save = CreateSaveGameObject(accountInfo);
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + SavedPathAddress);
         var json = JsonUtility.ToJson(save);
@@ -16,18 +16,17 @@ public static class SavingService
         file.Close();
     }
     
-    private static Save CreateSaveGameObject(PlayerInfo playerInfo)
+    private static Save CreateSaveGameObject(AccountInfo accountInfo)
     {
         Save save = new Save
         {
-            UserName = playerInfo.UserName, Password = playerInfo.Password, HighScore = playerInfo.HighScore
+            UserName = accountInfo.UserName, Password = accountInfo.Password, HighScore = accountInfo.HighScore
         };
-
-
+        
         return save;
     }
 
-    public static bool LoadGame(PlayerInfo playerInfo)
+    public static bool LoadGame(AccountInfo accountInfo)
     {
         if (File.Exists(Application.persistentDataPath + SavedPathAddress))
         {
@@ -37,9 +36,9 @@ public static class SavingService
             JsonUtility.FromJsonOverwrite((string) bf.Deserialize(file), save);
             file.Close();
 
-            playerInfo.UserName = save.UserName;
-            playerInfo.Password = save.Password;
-            playerInfo.HighScore = save.HighScore;
+            accountInfo.UserName = save.UserName;
+            accountInfo.Password = save.Password;
+            accountInfo.HighScore = save.HighScore;
             
             return true;
         }

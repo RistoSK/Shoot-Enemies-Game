@@ -1,17 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SaveLoad : MonoBehaviour
 {
-    public void Save(PlayerInfo playerInfo)
+    public void Save(AccountInfo accountInfo)
     {
-        SavingService.SaveGame(playerInfo);
+        SavingService.SaveGame(accountInfo);
     }
     
-
-    public bool Load(PlayerInfo playerInfo)
+    public bool Load(AccountInfo accountInfo)
     {
-        return SavingService.LoadGame(playerInfo);
+        return SavingService.LoadGame(accountInfo);
     }
 }
