@@ -9,6 +9,19 @@ public class UIMainMenuView : MonoBehaviour
     
     public Action OnPlayClicked;
     
+    public void Awake()
+    {
+        if (!_userNameText)
+        {
+            Debug.LogError("Username Text has not been assigned");
+        }
+        
+        if (!_highScoreText)
+        {
+            Debug.LogError("High Score Text has not been assigned");
+        }
+    }
+    
     public void PlayClicked()
     {
         OnPlayClicked?.Invoke();

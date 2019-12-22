@@ -27,6 +27,31 @@ public class GameRootController : MonoBehaviour
         {
             Instance = this;
         }
+        
+        if (!_gameDifficultyController)
+        {
+            Debug.LogError("Game Difficulty Controller has not been assigned");
+        }
+        
+        if (!_gameOverController)
+        {
+            Debug.LogError("Game Over Controller has not been assigned");
+        }
+        
+        if (!_gameController)
+        {
+            Debug.LogError("Game Controller has not been assigned");
+        }
+
+        if (!_saveLoad)
+        {
+            Debug.LogError("Save Load has not been assigned");    
+        }
+
+        if (!_accountInfo)
+        {
+            Debug.LogError("Account Info has not been assigned");
+        }
     }
 
     private void Start()

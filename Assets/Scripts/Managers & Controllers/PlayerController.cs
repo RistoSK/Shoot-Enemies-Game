@@ -40,6 +40,36 @@ public class PlayerController : MonoBehaviour
         {
             Instance = this;
         }
+
+        if (!_camera)
+        {
+            Debug.LogError("Camera has not been assigned");
+        }
+
+        if (!_playerStats)
+        {
+            Debug.LogError("PlayerStats has not been assigned");
+        }
+        
+        if (!_objectPool)
+        {
+            Debug.LogError("Enemy Object Pool has not been assigned");
+        }
+
+        if (!_projectileSpawnTransform)
+        {
+            Debug.LogError("Projectile Spawn Transform has not been assigned");
+        }
+
+        if (!_cooldownBarTransform)
+        {
+            Debug.LogError("Cooldown Bar Transform has not been assigned");
+        }
+
+        if (!_cooldownBar)
+        {
+            Debug.LogError("Cooldown Bar has not been assigned");
+        }
         
         _playerInput = new PlayerInput();
         

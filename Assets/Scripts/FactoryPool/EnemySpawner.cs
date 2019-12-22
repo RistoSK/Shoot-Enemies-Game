@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -10,6 +12,14 @@ public class EnemySpawner : MonoBehaviour
     
     private int _currentCount;
     private float _currentCooldown;
+
+    private void Awake()
+    {
+        if (!_objectPool)
+        {
+            Debug.LogError("Enemy Object Pool has not been assigned");
+        }
+    }
 
     public void ShouldSpawn(bool shouldSpawn)
     {

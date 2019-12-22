@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
@@ -11,7 +12,30 @@ public class RootController : MonoBehaviour
     [SerializeField] private AccountInfo _accountInfo;
 
     public AccountInfo AccountInfo => _accountInfo;
-    
+
+    private void Awake()
+    {
+        if (!_mainMenuController)
+        {
+            Debug.LogError("Main Menu Controller has not been assigned");
+        }
+        
+        if (!_loginController)
+        {
+            Debug.LogError("Login Controller has not been assigned");
+        }
+
+        if (!_saveLoad)
+        {
+            Debug.LogError("Save Load has not been assigned");    
+        }
+
+        if (!_accountInfo)
+        {
+            Debug.LogError("Account Info has not been assigned");
+        }
+    }
+
     private void Start()
     {
         _mainMenuController.Root = this;

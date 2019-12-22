@@ -8,7 +8,20 @@ public class UILoginView : MonoBehaviour
     [SerializeField] private TMP_InputField _passwordInputField;
     
     public Action OnSignUpClicked;
-    
+
+    private void Awake()
+    {
+        if (!_usernameInputField)
+        {
+            Debug.LogError("Username Input Field has not been assigned");
+        }
+
+        if (!_passwordInputField)
+        {
+            Debug.LogError("Password Input Field has not been assigned");
+        }
+    }
+
     public void SignUpClicked()
     {
         OnSignUpClicked?.Invoke();

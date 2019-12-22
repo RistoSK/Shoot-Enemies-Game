@@ -7,6 +7,24 @@ public class GameDifficultyController : BaseController<UIGameDifficultyRoot>
     [SerializeField] private GameMode _easyMode;
     [SerializeField] private GameMode _mediumMode;
     [SerializeField] private GameMode _hardMode;
+
+    private void Start()
+    {
+        if (!_easyMode)
+        {
+            Debug.LogError("Easy mode has not been assigned");
+        }
+        
+        if (!_mediumMode)
+        {
+            Debug.LogError("Medium mode has not been assigned");
+        }
+        
+        if (!_hardMode)
+        {
+            Debug.LogError("Hard mode has not been assigned");
+        }
+    }
     
     public override void InitiateController()
     {   

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Linq;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -13,6 +15,14 @@ public class Enemy : PoolableObject, IDamageable
     private float _enemySpeed;
 
     private SpriteRenderer _spriteRenderer;
+
+    private void Awake()
+    {
+        if (!_enemyStats.Any())
+        {
+            Debug.LogError("Enemy Stats have not been assigned");
+        }
+    }
 
     private void OnEnable()
     {

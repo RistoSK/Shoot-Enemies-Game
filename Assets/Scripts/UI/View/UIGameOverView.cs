@@ -10,6 +10,19 @@ public class UIGameOverView : MonoBehaviour
     public Action OnResetClicked;
     public Action OnQuitClicked;
 
+    public void Awake()
+    {
+        if (!_currentScore)
+        {
+            Debug.LogError("Current Score Text has not been assigned");
+        }
+        
+        if (!_highScore)
+        {
+            Debug.LogError("High Score Text has not been assigned");
+        }
+    }
+    
     public void ResetGame()
     {
         OnResetClicked?.Invoke();
