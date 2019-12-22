@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager Instance;
-    // TODO REMOVE THIS
-    [SerializeField] private GameMode _easyMode;
     
     [SerializeField] private EnemySpawner _enemySpawner;
     
@@ -28,22 +24,17 @@ public class EnemyManager : MonoBehaviour
         {
             Instance = this;
         }
-        
-        //TODO REMOVE IT IS FOR TESTING PURPOSES
-        _gameMode = _easyMode;
-        //////////////////////////////////////////////////////////////
     }
 
     private void Start()
     {
-        GameScreenManager.Instance.OnGameModeSelected += SetGameMode;
-        PlayerManager.Instance.OnGameOver += DeactivateAllEnemies;
+        PlayerController.Instance.OnGameOver += DeactivateAllEnemies;
         GameRootController.Instance.OnGameModeSelected += SetGameMode;
         GameRootController.Instance.OnGameStarted += StartSpawning;
 
         if (!_enemySpawner)
         {
-            Debug.LogError("EnemySpawner has not been set");
+            Debug.LogError("Enemy Spawner has not been set");
         }
     }
 

@@ -1,16 +1,18 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Enemy : PoolableObject, IDamageable
 {
     [SerializeField] private EnemyStats[] _enemyStats;
+
+    private readonly Vector3 _vectorLeft = new Vector3(-1, 0, 0);
     
     private EnemyStats _currentStats;
     private float _currentHealth;
-    
-    public Rigidbody2D Rigidbody2D { get; private set; }
+    private float _enemySpeed;
+
+    private SpriteRenderer _spriteRenderer;
 
     private void OnEnable()
     {
@@ -24,24 +26,27 @@ public class Enemy : PoolableObject, IDamageable
 
     public override void PrepareToUse()
     {
-        if (!Rigidbody2D)
+        if (!_spriteRenderer)
         {
-            Rigidbody2D = GetComponent<Rigidbody2D>();
-        }
-
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+        } 
+        
         int index = Random.Range(0, _enemyStats.Length);
-
         _currentStats = _enemyStats[index];
 
-        GetComponent<SpriteRenderer>().color = _currentStats.Color;
-        
+        _spriteRenderer.color = _currentStats.Color;
+
         GameMode gameMode = EnemyManager.Instance.CurrentGameMode;
+        
         _currentHealth = _currentStats.Health * gameMode.PercentageDifficultyMultiplier;
-        
-        float speed = _currentStats.Speed * gameMode.PercentageDifficultyMultiplier;
-        
-        Rigidbody2D.AddForce(new Vector2(-1, 0) * speed , ForceMode2D.Impulse);
+        _enemySpeed =  _currentStats.Speed * gameMode.PercentageDifficultyMultiplier;
     }
+
+    private void Update()
+    {
+        transform.position += _vectorLeft * (_enemySpeed * Time.deltaTime);
+    }
+    
 
     public void TakeDamage(float damage)
     {

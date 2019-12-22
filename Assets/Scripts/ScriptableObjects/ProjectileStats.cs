@@ -5,4 +5,5 @@ public class ProjectileStats : ScriptableObject
 {
     public float Damage;
     public float TimeOutSeconds;
+    public float Speed;
 }
