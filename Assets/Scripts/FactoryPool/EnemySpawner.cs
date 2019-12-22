@@ -5,10 +5,11 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private ObjectPool _objectPool;
-    [SerializeField] private float _spawnRatePerMinute = 10;
+    [SerializeField] private float _spawnCooldownInSeconds;
     [SerializeField] private bool _shouldSpawn = true;
     
     private int _currentCount;
+    private float _currentCooldown;
 
     public void ShouldSpawn(bool shouldSpawn)
     {
@@ -21,15 +22,14 @@ public class EnemySpawner : MonoBehaviour
         {
             return;
         }
-        
-        var targetCount = Time.time * (_spawnRatePerMinute / 60);
 
-        while (targetCount > _currentCount)
+        if (_currentCooldown > _spawnCooldownInSeconds)
         {
             var inst = _objectPool.GetPrefabInstance();
             inst.transform.position = new Vector3(9.5f, Random.Range(-4.5f, 4.5f), 0);
-
-            _currentCount++; 
+            _currentCooldown = 0f;
         }
+
+        _currentCooldown += Time.deltaTime;
     }
 }
