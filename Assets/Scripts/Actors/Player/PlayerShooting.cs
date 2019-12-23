@@ -2,36 +2,38 @@
 
 public class PlayerShooting
 {
-    private readonly PlayerStats _playerStats;
+    private readonly IPlayerShootingInput _input;
+    private readonly PlayerStats _stats;
     private readonly Transform _projectileSpawnTransform;
-    private readonly ObjectPool _objectPool;
+    private readonly ObjectPool _pool;
     private readonly GameObject _cooldownBar;
     private readonly Transform _cooldownBarTransform;
     
     private float _currentCooldown;
 
 
-    public PlayerShooting(PlayerStats stats, Transform projectileSpawn, ObjectPool objectPool,
-        GameObject cooldownBar, Transform cooldownBarTransform)
+    public PlayerShooting(IPlayerShootingInput input, PlayerStats stats, Transform projectileSpawn, ObjectPool pool,
+                          GameObject cooldownBar, Transform cooldownBarTransform)
     {
-        _playerStats = stats;
+        _stats = stats;
         _projectileSpawnTransform = projectileSpawn;
-        _objectPool = objectPool;
+        _pool = pool;
         _cooldownBar = cooldownBar;
         _cooldownBarTransform = cooldownBarTransform;
-
+        _input = input;
+        
         _currentCooldown = stats.ShootingCooldown;
     }
     
     public void Tick()
     {
-        if (_currentCooldown > _playerStats.ShootingCooldown)
+        if (_currentCooldown > _stats.ShootingCooldown)
         {
             _cooldownBar.SetActive(false);
             
-            if (Input.GetButtonDown("Fire1"))
+            if (_input.HasShot)
             {
-                var instance = _objectPool.GetPrefabInstance();
+                var instance = _pool.GetPrefabInstance();
                 var projectileTransform = instance.transform;
                 
                 projectileTransform.position = _projectileSpawnTransform.position;
@@ -43,7 +45,7 @@ public class PlayerShooting
         else
         {
             _currentCooldown += Time.deltaTime;
-            _cooldownBarTransform.localScale = new Vector3(1 -  (_currentCooldown / _playerStats.ShootingCooldown), 1, 0);
+            _cooldownBarTransform.localScale = new Vector3(1 -  (_currentCooldown / _stats.ShootingCooldown), 1, 0);
         }
     }
 }

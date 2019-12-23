@@ -12,13 +12,13 @@
               <e p="Enemy.cs" t="Include" />
             </e>
             <e p="Player" t="Include">
-              <e p="PlayerInput.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
+              <e p="PlayerMovementInput.cs" t="Include" />
               <e p="PlayerProjectile.cs" t="Include" />
               <e p="PlayerShooting.cs" t="Include" />
+              <e p="PlayerShootingInput.cs" t="Include" />
             </e>
           </e>
-          <e p="EnemyDestroyer.cs" t="Include" />
           <e p="FactoryPool" t="Include">
             <e p="EnemySpawner.cs" t="Include" />
             <e p="GenericObjectPool.cs" t="Include" />
@@ -30,6 +30,8 @@
           <e p="Intefaces" t="Include">
             <e p="IDamageable.cs" t="Include" />
             <e p="IPlayerInput.cs" t="Include" />
+            <e p="IPlayerMovementInput.cs" t="Include" />
+            <e p="IPlayerShootingInput.cs" t="Include" />
           </e>
           <e p="Managers &amp; Controllers" t="Include">
             <e p="EnemyManager.cs" t="Include" />
@@ -73,6 +75,9 @@
               <e p="UIRoot.cs" t="Include" />
               <e p="UIView.cs" t="Include" />
             </e>
+          </e>
+          <e p="World" t="Include">
+            <e p="EnemyDestroyer.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

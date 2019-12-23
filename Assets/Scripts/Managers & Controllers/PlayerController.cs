@@ -26,7 +26,9 @@ public class PlayerController : MonoBehaviour
     private float _minY;
     private float _maxY;
 
-    private IPlayerInput _playerInput;
+    private IPlayerMovementInput _playerMovementInput;
+    private IPlayerShootingInput _playerShootingInput;
+    
     private PlayerMovement _playerMovement;
     private PlayerShooting _playerShooting;
 
@@ -71,11 +73,12 @@ public class PlayerController : MonoBehaviour
             Debug.LogError("Cooldown Bar has not been assigned");
         }
         
-        _playerInput = new PlayerInput();
+        _playerMovementInput = new PlayerMovementInput();
+        _playerShootingInput = new PlayerShootingInput();
         
-        _playerMovement = new PlayerMovement(_playerInput, _playerStats, transform);
-        _playerShooting = new PlayerShooting(_playerStats, _projectileSpawnTransform, _objectPool,
-                                             _cooldownBar, _cooldownBarTransform);
+        _playerMovement = new PlayerMovement(_playerMovementInput, _playerStats, transform);
+        _playerShooting = new PlayerShooting(_playerShootingInput, _playerStats, _projectileSpawnTransform, 
+                                             _objectPool, _cooldownBar, _cooldownBarTransform);
     }
 
     private void Start()
@@ -98,7 +101,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
         
-        _playerInput.GetInput();
+        _playerMovementInput.GetInput();
+        _playerShootingInput.GetInput();
         
         _playerMovement.Tick();
         _playerShooting.Tick();

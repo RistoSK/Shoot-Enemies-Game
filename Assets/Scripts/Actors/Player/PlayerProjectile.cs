@@ -26,7 +26,7 @@ public class PlayerProjectile : PoolableObject
     private void Update()
     {
         transform.position += _rightVector * (Time.deltaTime * _projectileStats.Speed);
-        
+
         if (Time.time - _startTime > _projectileStats.TimeOutSeconds)
         {
             ReturnToPool();

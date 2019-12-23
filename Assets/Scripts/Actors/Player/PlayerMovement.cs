@@ -2,11 +2,11 @@
 
 public class PlayerMovement
 {
-    private readonly IPlayerInput _playerInput;
+    private readonly IPlayerMovementInput _playerInput;
     private readonly PlayerStats _playerStats;
     private readonly Transform _playerTransform;
 
-    public PlayerMovement(IPlayerInput input, PlayerStats stats, Transform playerTransform)
+    public PlayerMovement(IPlayerMovementInput input, PlayerStats stats, Transform playerTransform)
     {
         _playerInput = input;
         _playerStats = stats;
