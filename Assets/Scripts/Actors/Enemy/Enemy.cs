@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -61,8 +60,9 @@ public class Enemy : PoolableObject, IDamageable
     public void TakeDamage(float damage)
     {
         _currentHealth -= damage;
-            
-        if (_currentHealth <= 0)
+        _currentHealth = Mathf.Round(_currentHealth);
+        
+        if (_currentHealth <= 0f)
         {
             EnemyManager.Instance.PointsGained(_currentStats.Points);
             ReturnToPool();

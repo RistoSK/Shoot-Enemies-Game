@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1a3687b-4f02-4b17-80db-9a22bd4712fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Shoot-Enemies Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shoot-Enemies Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shoot-Enemies Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shoot-Enemies Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Player/Projectile Stats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Player/Projectile Stats.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/PlayerMovementInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/PlayerInput.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/PlayerMovementInput.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/PlayerProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/PlayerProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/PlayerShooting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/PlayerShooting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Intefaces/IPlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Intefaces/IPlayerInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers &amp; Controllers/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers &amp; Controllers/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actors/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actors/Enemy/Enemy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +62,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FactoryPool/GenericObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Intefaces/IPlayerShootingInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FactoryPool/IObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FactoryPool/EnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Controller/GameController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/View/UIGameRoot.cs" root0="FORCE_HIGHLIGHTING" />
@@ -95,8 +89,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Save/Save.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Save/SaveLoad.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Save/SavingService.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/EnemyStats.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameMode.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/PlayerStats.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Controller/BaseController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Controller/GameController.cs" />
@@ -116,7 +108,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/View/UIGameView.cs" />
         <option value="$PROJECT_DIR$/Assets/ScrollingBackground.cs" />
         <option value="$PROJECT_DIR$/Assets/EnemyDestroyer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Actors/Enemy/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Controller/GameRootController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers &amp; Controllers/ScoreManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FactoryPool/EnemySpawner.cs" />
@@ -130,6 +121,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers &amp; Controllers/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Actors/Player/PlayerShooting.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Actors/Player/PlayerProjectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/EnemyStats.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameMode.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Actors/Enemy/Enemy.cs" />
       </list>
     </option>
   </component>
@@ -191,6 +185,7 @@
       <workItem from="1576994860195" duration="22250000" />
       <workItem from="1577031667293" duration="1727000" />
       <workItem from="1577078090637" duration="1669000" />
+      <workItem from="1577083208001" duration="1932000" />
     </task>
     <servers />
   </component>
@@ -314,11 +309,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1576918257421" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1577078718090">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1577083233449">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-1381" y="183" width="840" height="856" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577032518821" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1577078718090" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1577083233449" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -328,32 +323,6 @@
           <line>31</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Save v2/SavingService.cs" initialLine="31" />
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Actors/Enemy/Enemy.cs</url>
-          <line>33</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Actors/Enemy/Enemy.cs" initialLine="33">
-            <startOffsets>
-              <option value="757" />
-            </startOffsets>
-            <endOffsets>
-              <option value="810" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Actors/Enemy/Enemy.cs</url>
-          <line>28</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Actors/Enemy/Enemy.cs" initialLine="28">
-            <startOffsets>
-              <option value="653" />
-            </startOffsets>
-            <endOffsets>
-              <option value="706" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/FactoryPool/PoolableObject.cs</url>
