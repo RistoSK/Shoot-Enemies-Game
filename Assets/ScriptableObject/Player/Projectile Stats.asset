@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Projectile Stats
   m_EditorClassIdentifier: 
   Damage: 10
-  TimeOutSeconds: 6
+  TimeOutSeconds: 4
   Speed: 20
